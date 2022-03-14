@@ -1,25 +1,31 @@
 import React from "react";
-import { chakra, Box, Flex, useColorModeValue, HStack } from "@chakra-ui/react";
-import { StarIcon } from "@chakra-ui/icons";
+import {
+  chakra,
+  Box,
+  Flex,
+  useColorModeValue,
+  HStack,
+  Image,
+} from "@chakra-ui/react";
 
 export function ListingCard() {
   return (
-    <Flex p={50} w="full" alignItems="center" justifyContent="center">
+    <Flex p={50} w="full" alignItems="center">
       <Flex
-        maxW="md"
         mx="auto"
         p={8}
         bg={useColorModeValue("white", "gray.800")}
         shadow="lg"
         rounded="lg"
-        overflow="hidden"
       >
         <Box
           w={1 / 3}
           bgSize="cover"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')",
+              "url('https://www.pushkeep.com/assets/img/logo.png')",
+            width: "200px",
+            height: "200px",
           }}
         ></Box>
 
@@ -29,7 +35,7 @@ export function ListingCard() {
             fontWeight="bold"
             color={useColorModeValue("gray.800", "white")}
           >
-            Backpack
+            PushKeep
           </chakra.h1>
 
           <chakra.p
@@ -37,40 +43,48 @@ export function ListingCard() {
             fontSize="sm"
             color={useColorModeValue("gray.600", "gray.400")}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit In odit
+            PushKeep brings all of your devices together and lets you share
+            text, links, and files seamlessly between them.
           </chakra.p>
 
-          <HStack spacing={1} display="flex" alignItems="center" mt={2}>
-            <StarIcon color={useColorModeValue("gray.700", "gray.300")} />
-            <StarIcon color={useColorModeValue("gray.700", "gray.300")} />
-            <StarIcon color={useColorModeValue("gray.700", "gray.300")} />
-            <StarIcon color="gray.500" />
-            <StarIcon color="gray.500" />
+          <HStack spacing={2} mt={4} display="flex" alignItems="start">
+            <Flex alignItems="center">
+              <Image
+                src="https://bit.ly/dan-abramov"
+                boxSize="40px"
+                rounded="full"
+                mr={2}
+              ></Image>
+              <chakra.p>Aleksandar Gekov</chakra.p>
+            </Flex>
+            <Flex alignItems="center">
+              <Image
+                src="https://randomuser.me/api/portraits/men/4.jpg"
+                boxSize="40px"
+                rounded="full"
+                mr={2}
+              ></Image>
+              <chakra.p>Georgi Manev</chakra.p>
+            </Flex>
+            <Flex alignItems="center">
+              <Image
+                src="https://api.uifaces.co/our-content/donated/ukegoVAy.jpg"
+                boxSize="40px"
+                rounded="full"
+                mr={2}
+              ></Image>
+              <chakra.p>Viktor Naydenov</chakra.p>
+            </Flex>
+            <Flex alignItems="center">
+              <Image
+                src="https://randomuser.me/api/portraits/women/65.jpg"
+                boxSize="40px"
+                rounded="full"
+                mr={2}
+              ></Image>
+              <chakra.p>Elena Nikolova</chakra.p>
+            </Flex>
           </HStack>
-
-          <Flex mt={3} alignItems="center" justifyContent="space-between">
-            <chakra.h1 color="white" fontWeight="bold" fontSize="lg">
-              $220
-            </chakra.h1>
-            <chakra.button
-              px={2}
-              py={1}
-              bg="white"
-              fontSize="xs"
-              color="gray.900"
-              fontWeight="bold"
-              rounded="lg"
-              textTransform="uppercase"
-              _hover={{
-                bg: "gray.200",
-              }}
-              _focus={{
-                bg: "gray.400",
-              }}
-            >
-              Add to cart
-            </chakra.button>
-          </Flex>
         </Box>
       </Flex>
     </Flex>
